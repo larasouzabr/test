@@ -27,11 +27,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("isLogged",JSON.stringify(true));
       sessionStorage.setItem("user",JSON.stringify(this.loginForm.value));
       this.router.navigateByUrl('home')
-/* 
-      if (users.findIndex(u=> u.role == this.loginForm.value == "Administrator"){
-        localStorage.setItem("isAdm",JSON.stringify(true));
-        sessionStorage.setItem("Adm",JSON.stringify(this.loginForm.value));
-        }    */
     }  
   }
 }

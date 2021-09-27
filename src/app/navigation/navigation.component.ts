@@ -19,13 +19,14 @@ export class NavigationComponent implements OnInit {
   ngDoCheck(){
     let isLogged = localStorage.getItem("isLogged") ? JSON.parse(localStorage.getItem("isLogged") || "" ) : false;
     this.isLogged = isLogged == true;
-    let isAdm = localStorage.getItem("isAdm") ? JSON.parse(localStorage.getItem("isAdm") || "" ) : false;
-    this.isAdm = isAdm == true;
+    let user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") || "" ) : null;
+    if (user != null){
+     this.isAdm = user.role == "Administrator" == true;
+    }
   }
   
   onLogout(){
     localStorage.removeItem("isLogged");
-    localStorage.removeItem("isAdm");
     sessionStorage.removeItem("user");
     this.router.navigateByUrl("/login");  
   }

@@ -16,7 +16,7 @@ export class RoutingGuard implements CanActivate {
       let isLogged = localStorage.getItem("isLogged") ? JSON.parse(localStorage.getItem("isLogged") || "") : false;
       if(state.url == "/"){
         isLogged ? this.router.navigateByUrl("home") : this.router.navigateByUrl("login");
-      } else if(isLogged &&(state.url == "/login" || state.url == "/register")){
+      } else if(isLogged &&(state.url == "/login" || state.url == "/register" || state.url == "/create-product")){
         this.router.navigateByUrl("/home")
       }
         return true;

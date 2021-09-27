@@ -3,6 +3,5 @@ export interface User{
     password?:string,
     role?:string,
     isActivated?: boolean
-    book?: string
 }
 
