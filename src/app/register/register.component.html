@@ -1,0 +1,27 @@
+<div class ="container">
+  <div class="d-flex justify-content-center">
+    <form id ="registerForm" class ="card border-0 shadow rounded-3 mt-5" [formGroup] ="registerForm" (submit) ="save()" >
+        <div class="p-5 text-center">
+            <h5 class="card-title mb-4 fw-light fs-5">Create your user</h5>
+            <div>
+                <label for ="username"> Username:</label>
+                <input class="form-control mb-3" formControlName ="username" placeholder="Username" type="text">
+            </div> 
+            <div>
+                <label for ="password">Password:</label>
+                <input class="form-control" formControlName ="password" placeholder="Password" type="password">
+            </div>     
+            <label for="value">Role:</label>
+            <ng-select class="custom"
+              [items]="roles"
+              [searchable]="false"
+              [clearable]="false"
+              formControlName ="role">
+            </ng-select>
+          <div>
+              <button class="btn btn-primary mt-5"type="submit" [disabled]="registerForm.invalid">Create</button>
+          </div>
+        </div>
+    </form>
+  </div>    
+</div>

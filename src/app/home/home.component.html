@@ -1,0 +1,25 @@
+ 
+ <div class="d-flex justify-content-start mt-2" id="welcome" *ngIf="user?.username != null">
+   <h1>{{'Hello,' + user?.username}}!! </h1>  
+ </div>
+
+ <h2 id="BooksAvailable" class="text-center">Books Available: </h2>
+<div class="container-fluid">
+  <div *ngIf="users.length > 0">
+    <div *ngFor ="let u of book; let i = index">
+      <div id="mainDiv" class=" text-center m-5">
+        <div class="row">
+          <div class="d-flex">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{'Name of the book: ' + u?.nameBook}}</h5>
+                <p class="card-text">{{'Writer of the book: ' + u?.authorBook}}</p>
+                <p class="card-text">{{'Type: ' + u?.type}}</p>
+                <button class="btn btn-success" (click) ="test(i)">Buy</button>   
+              </div>
+            </div>  
+          </div>
+        </div>
+    </div>  
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <form id ="form" class ="card border-0 shadow rounded-3 mt-5" [formGroup] ="loginForm" (submit) ="save()" >
+            <div class="p-5 text-center">
+                <h5 class="card-title mb-4 fw-light fs-5">Sign In</h5>
+                <div>
+                    <label for ="username"> Username:</label>
+                    <input class="form-control mb-3" formControlName ="username" placeholder="Username" type="text">
+                </div> 
+                <div>
+                    <label for ="password">Password:</label>
+                    <input class="form-control" formControlName ="password" placeholder="Password" type="password">
+                </div>     
+                <div class="pt-4">
+                    <button class="btn btn-primary" type="submit"[disabled]="loginForm.invalid">Submit</button>
+                </div>
+                <div class="mt-4">
+                    <label> New here? <a routerLink="/register" class="link-info">Register now</a></label>
+                </div>
+            </div>
+        </form>     
+    </div>
+</div>
+
+

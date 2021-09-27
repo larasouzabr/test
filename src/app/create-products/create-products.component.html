@@ -1,0 +1,27 @@
+<div class ="container">
+    <div class="d-flex justify-content-center">
+      <form id ="createProductsForm" class ="card border-0 shadow rounded-3 mt-5" [formGroup] ="createProductsForm" (submit) ="save()" >
+          <div class="p-5 text-center">
+              <h5 class="card-title mb-4 fw-light fs-5">Please, add a book </h5>
+              <div>
+                  <label for ="nameBook"> Name of the book </label>
+                  <input class="form-control mb-3" formControlName ="nameBook" placeholder="The selection" type="text">
+              </div> 
+              <div>
+                  <label for ="authorBook">Author </label>
+                  <input class="form-control" formControlName ="authorBook" placeholder="Kiera Cass" type="text">
+              </div>     
+              <label for="value">type:</label>
+              <ng-select class="custom"
+                [items]="type"
+                [searchable]="false"
+                [clearable]="false"
+                formControlName ="type">
+              </ng-select>
+            <div>
+                <button class="btn btn-primary mt-5"type="submit"[disabled]="createProductsForm.invalid">Create</button>
+            </div>
+          </div>
+      </form>
+    </div>    
+  </div>
