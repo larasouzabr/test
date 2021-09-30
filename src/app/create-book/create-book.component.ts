@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-create-products',
-  templateUrl: './create-products.component.html',
-  styleUrls: ['./create-products.component.sass']
+  selector: 'app-create-book',
+  templateUrl: './create-book.component.html',
+  styleUrls: ['./create-book.component.sass']
 })
-export class CreateProductsComponent implements OnInit {
+export class CreateBookComponent implements OnInit {
   public type =["E-book", "Printed"]
   public book:Array<string> = [];
-  public createProductsForm: FormGroup = new FormGroup({
+  
+  public createBookForm: FormGroup = new FormGroup({
     nameBook: new FormControl(null, Validators.required),
     authorBook: new FormControl(null, Validators.required),
     type: new FormControl(null, Validators.required)
@@ -20,8 +21,8 @@ export class CreateProductsComponent implements OnInit {
     this.book = localStorage.getItem("book") != null ? JSON.parse(localStorage.getItem("book") || "") :[];
   }
   save(){
-    this.book.push(this.createProductsForm.value);
+    this.book.push(this.createBookForm.value);
     localStorage.setItem("book", JSON.stringify(this.book));
-    this.createProductsForm.reset();
+    this.createBookForm.reset();
   }
 }

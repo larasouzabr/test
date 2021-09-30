@@ -1,6 +1,6 @@
 <div class ="container">
     <div class="d-flex justify-content-center">
-      <form id ="createProductsForm" class ="card border-0 shadow rounded-3 mt-5" [formGroup] ="createProductsForm" (submit) ="save()" >
+      <form id ="createBookForm" class ="card border-0 shadow rounded-3 mt-5" [formGroup] ="createBookForm" (submit) ="save()" >
           <div class="p-5 text-center">
               <h5 class="card-title mb-4 fw-light fs-5">Please, add a book </h5>
               <div>
@@ -19,7 +19,7 @@
                 formControlName ="type">
               </ng-select>
             <div>
-                <button class="btn btn-primary mt-5"type="submit"[disabled]="createProductsForm.invalid">Create</button>
+                <button class="btn btn-primary mt-5"type="submit"[disabled]="createBookForm.invalid">Create</button>
             </div>
           </div>
       </form>

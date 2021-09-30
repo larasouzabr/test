@@ -1,19 +1,31 @@
  
- <div class="d-flex justify-content-start mt-2" id="welcome" *ngIf="user?.username != null">
+ <div class="d-flex justify-content-start mt-2 mb-5" id="welcome" *ngIf="user?.username != null">
    <h1>{{'Hello,' + user?.username}}!! </h1>  
  </div>
 
- <h2 id="BooksAvailable" class="text-center">Books Available: </h2>
-<div class="container-fluid">
-  <div class="d-flex flex-wrap justify-content-center align-itens-center" *ngIf="users.length > 0">
-    <div class=" text-center m-4 p-2" *ngFor ="let u of book; let i = index">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{'Name of the book: ' + u?.nameBook}}</h5>
-            <p class="card-text">{{'Writer of the book: ' + u?.authorBook}}</p>
-            <p class="card-text">{{'Type: ' + u?.type}}</p>
-            <button class="btn btn-success" (click) ="test(i)">Buy</button>   
-        </div> 
+ 
+
+<!--   <div class="container-fluid">
+    <h2 id="Comments" class="text-center">Comments </h2>
+    <div class="row justify-content-center m-3"> 
+      <button class="btn btn-success" (click)="getDataFromAPI()" > Click here to show </button>
     </div>
-  </div>
-</div>
+    <div class="d-flex flex-wrap justify-content-center align-itens-center">
+      <div class=" text-center m-4" *ngFor = "let item of data">
+        <div class="card text-justify" style="width: 18rem;">
+          <div class="card-body">
+            <ul style="list-style: none" class="m-1 p-1">
+               <li>{{d.postId}}</li>
+              <li>{{d.id}}</li> 
+              <li id="body">{{item.body}} </li>
+              <br> 
+              <li id= "title">Name</li>
+              <li id="text"> {{item?.name}} </li>
+              <li id ="title">Email</li>
+              <li id ="text">{{item?.email}}</li>
+             </ul>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div> -->

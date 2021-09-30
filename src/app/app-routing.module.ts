@@ -1,7 +1,7 @@
 import { createComponent } from '@angular/compiler/src/core';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateProductsComponent } from './create-products/create-products.component';
+import { CreateBookComponent } from './create-book/create-book.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RoutingGuard } from './guards/routing.guard';
 import { HomeComponent } from './home/home.component';
@@ -29,8 +29,8 @@ const routes: Routes = [
         component: RegisterComponent
       },
       {
-        path:"create-products",
-        component: CreateProductsComponent
+        path:"create-book",
+         component: CreateBookComponent
       }
     ] 
   }  
