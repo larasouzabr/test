@@ -1,1 +1,23 @@
-<p>info-card works!</p>
+<div class="container-fluid">
+  <div class="row justify-content-center m-3">
+    <div class="d-flex flex-wrap justify-content-center align-itens-center">
+      <div class="card text-justify" style="width: 18rem;">
+        <div class="card-body">
+          <ul style="list-style: none" class="m-1 p-1">
+            <li>{{comment?.postId}}</li>
+            <li>{{comment?.id}}</li> 
+            <li id="body">{{comment?.body}} </li>
+            <br> 
+            <li id= "title">Name</li>
+            <li id="text"> {{comment?.name}} </li>
+            <li id ="title">Email</li>
+            <li id ="text">{{comment?.email}}</li>
+          </ul>
+          <div class="d-flex justify-content-center">
+            <button class ="btn btn-success" (click)="onClick">Click here!</button>
+          </div>
+        </div>    
+      </div> 
+    </div>
+  </div>
+</div>

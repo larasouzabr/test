@@ -8,27 +8,27 @@ import { JSONPlaceholderService } from '../services/jsonplaceholder.service';
 })
 export class HomeComponent implements OnInit {
   public user: any;
-  public users: Array<any>=[]
-  public book:Array<any>=[] 
-   data: Array<any>
+  public users: Array<any>=[];
+  public book: Array<any>=[] ;
+  public comments: Array<Comment> = [];
   constructor(
     private JSONPlaceholder: JSONPlaceholderService,
   ) { 
-    this.data = new Array <any> ()
+    this.comments = new Array <any> () 
     }
   
   ngOnInit(): void {
     this.user = JSON.parse(sessionStorage.getItem("user") || "");
     this.users = localStorage.getItem("users") != null ? JSON.parse(localStorage.getItem("users") || "") : [];
     this.book = localStorage.getItem("book") != null ? JSON.parse(localStorage.getItem("book") || "") : [];
-    this.JSONPlaceholder.getData().subscribe((data)=>{
-      console.log(data)
-      this.data = data
-  });
+    this.JSONPlaceholder.getData().subscribe((resp)=>{
+      this.comments = resp;
+      console.log(this.comments);
+     });
 }
 
-  test(i:any){
-    console.log(this.book[i]);
+  click(comment:any){
+    console.log(comment);
   }
 
   /* getDataFromAPI(){

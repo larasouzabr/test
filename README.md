@@ -1,8 +1,8 @@
 # Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
-It's a small project for learning somethings like: REST communication, guards, routing, components, reusable components and Typescript.
+It's a small project based on login (adm or user), creating books and showing comments about it. It was for learning somethings like: REST communication, guards, routing, components, reusable components and Typescript.
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 ## Development server 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
