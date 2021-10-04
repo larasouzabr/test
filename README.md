@@ -1,6 +1,6 @@
 # Test
 
-It's a small project based on login (adm or user), creating books and showing comments about it. It was for learning somethings like: REST communication, guards, routing, components, reusable components and Typescript.
+It's a small project based on login (adm or user), creating books and showing comments about it. It was for learning somethings like: REST communication, guards, routing, components, reusable components, Typescript and some libraries like NGX Spinner and NG Toastr.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 ## Development server 
