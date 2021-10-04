@@ -1,34 +1,27 @@
  
- <div class="d-flex justify-content-start mt-2 mb-5" id="welcome" *ngIf="user?.username != null">
+ <div class="d-flex justify-content-start mt-4 mb-5 fs-5" id="welcome" *ngIf="user?.username != null">
    <h1>{{'Hello,' + user?.username}}!! </h1>  
  </div>
+  
+<div class="text-center">
+  <h2 id="header" class="text-center">Books Available: </h2>
+</div>
 
-<div class ="d-flex justify-content-center flex-wrap">
-  <h2 id="Comments" class="text-center">Comments </h2>
-  <app-info-card *ngFor="let comment of comments" [comment]="comment" (clickEvent)="click($event)"></app-info-card>
+<div id="container" class="d-flex flex-wrap justify-content-center align-itens-center">
+<app-book-preview *ngFor ="let book of book" [book]="book" (clickEvent) ="onClick($event)"></app-book-preview>
+</div>
+
+<div>
+  <h2 id="header" class="text-center m-4">Comments </h2>
+</div>
+
+<div id ="container" class ="d-flex justify-content-center flex-wrap">
+  <app-info-card *ngFor="let comment of comments" [comment]="comment" (clickEvent)="onClick($event)"></app-info-card>
 </div> 
 
-<!--   <div class="container-fluid">
-    <h2 id="Comments" class="text-center">Comments </h2>
-    <div class="row justify-content-center m-3"> 
-      <button class="btn btn-success" (click)="getDataFromAPI()" > Click here to show </button>
-    </div>
-    <div class="d-flex flex-wrap justify-content-center align-itens-center">
-      <div class=" text-center m-4" *ngFor = "let item of data">
-        <div class="card text-justify" style="width: 18rem;">
-          <div class="card-body">
-            <ul style="list-style: none" class="m-1 p-1">
-               <li>{{d.postId}}</li>
-              <li>{{d.id}}</li> 
-              <li id="body">{{item.body}} </li>
-              <br> 
-              <li id= "title">Name</li>
-              <li id="text"> {{item?.name}} </li>
-              <li id ="title">Email</li>
-              <li id ="text">{{item?.email}}</li>
-             </ul>
-          </div> 
-        </div>
-      </div>
-    </div>
-  </div> -->
+<ngx-spinner 
+ bdColor="rgba(122,41,122,0.8)"
+size="medium"
+color="#fff"
+type="ball-clip-rotate-multiple" ></ngx-spinner>
+

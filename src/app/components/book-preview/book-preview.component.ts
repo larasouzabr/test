@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Book } from 'src/app/dtos';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-book-preview',
@@ -14,13 +16,22 @@ export class BookPreviewComponent implements OnInit {
   @Output()
   public clickEvent: EventEmitter <any> = new EventEmitter<any> ();
 
-  constructor() { }
+  constructor(
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService,
+    
+    ) { }
 
   ngOnInit(): void {
   }
 
   onClick(){
     this.clickEvent.emit(this.book);
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+      this.toastr.success('Book was bought');
+    }, 1500);
   }
 
 }

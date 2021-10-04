@@ -12,3 +12,9 @@ export interface Comment {
     email?: string, 
     body?: string
 }
+
+export interface Book {
+    authorBook?: string,
+    type?: string,
+    nameBook?: Array<string>,
+}

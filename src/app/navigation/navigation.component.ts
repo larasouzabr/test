@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-navigation',
@@ -10,7 +11,8 @@ export class NavigationComponent implements OnInit {
  public isLogged: boolean = false;
  public isAdm: boolean = false;
   constructor(
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -21,14 +23,15 @@ export class NavigationComponent implements OnInit {
     this.isLogged = isLogged == true;
     let user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") || "" ) : null;
     if (user != null){
-     this.isAdm = user.role == "Administrator" == true;
+      user.role == "Administrator" == this.isAdm;
     }
   }
   
   onLogout(){
     localStorage.removeItem("isLogged");
     sessionStorage.removeItem("user");
-    this.router.navigateByUrl("/login");  
+    this.router.navigateByUrl("/login"); 
+    this.toastr.success('User logout');
   }
 
 }
