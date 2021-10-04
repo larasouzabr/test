@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { Comment } from 'src/app/dtos';
 
 @Component({
   selector: 'app-info-card',
